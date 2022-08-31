@@ -1,0 +1,258 @@
+.menuHero{
+    padding-top: 7rem;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 7rem;
+        right: -5rem;
+        background-image: url('../img/beans-hero.png');
+        @include bgCover;
+        display: block;
+        width: 22rem;
+        height: 14.6875rem;
+        z-index: 1;       
+    }
+    .svg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        z-index: -1;
+        @media(max-width: 991.98px) {
+            top: 5rem;
+        }
+    }
+    h1{
+        font-size: 3rem;
+        font-weight: 700;
+        color: $darkChocolate;
+        @media (max-width: 575.98px) {
+            font-size: 2.5rem;
+        }
+    }
+    &__content{
+        position: relative;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+            padding-top: 3rem;
+            padding-left: 0;
+        }
+        @media (min-width: 992px) and (max-width: 1299.98px) {
+            padding-top: 4rem;
+        }
+        @media (min-width: 1300px) and (max-width: 1531.98px){
+            padding-top: 5rem;
+        }
+        &__cards{
+            @include flexBetween;
+            @media (max-width: 991.98px) {
+                flex-wrap: wrap;
+            }
+            &__single{
+                width: 28%;
+                margin-top: 3rem;
+                @include flexCenter;
+                flex-direction: column;
+                text-align: center;
+                @media (max-width: 991.98px) {
+                    width: 50%;
+                    flex-wrap: wrap;
+                }
+                @media (max-width: 575.98px) {
+                    width: 100%;
+                }
+                h2{
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    padding: 2rem 0; 
+                    font-weight: 500;
+                }
+                // img{
+                //     width: 100%;
+                //     height: auto;
+                // }
+                a{
+                    margin-top: 1rem !important;
+                    background-color: $chocolate;
+                    &::hover{
+                        background-color: $darkChocolate;
+                    }
+                    span{
+                        margin-left: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.filter{
+    position: relative;
+    padding: 2rem 0;
+    overflow: hidden;
+    &__content{
+        position: relative;
+        &__body{
+            padding: 5rem 4rem;
+            border-radius: 1.25rem;
+            border-top-left-radius: 8.0625rem;
+            overflow: hidden;
+            @media (max-width: 575.98px) {
+                padding: 3rem 1rem;
+                border-radius: 1rem;
+                border-top-left-radius: 4.5rem;
+            }
+            &__form{
+                position: relative;
+                z-index: 1;
+                padding-bottom: 2rem;
+                @include flexCenter;
+                &__input{
+                    position: relative;
+                    width: 48.1875rem;
+                    margin-right: 1.5rem;
+                    @media (max-width: 575.98px) {
+                        width: 100%;
+                        margin-right: 1rem;
+                    }
+                    input{
+                        padding: 0rem 2rem 0rem 3.5rem;
+                        height: 2.55rem;
+                        border-radius: 0.25rem;
+                        font-size: 0.875rem;
+                        border: 1px solid #F1D5B4;
+                        &::placeholder {
+                            color: #F1D5B4 !important;
+                        }
+                        &:hover, &:focus, &:active{
+                            border: 1px solid #F1D5B4;
+                            outline: none !important;
+                        }
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0.75rem;
+                        left: 1rem;
+                        background-image: url('../img/search-icon.svg');
+                        @include bgCover;
+                        display: block;
+                        width: 1.3125rem;
+                        height: 1.125rem;
+                        z-index: 1;
+                    }
+                }
+                &__button{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0.75rem;
+                        left: 1rem;
+                        background-image: url('../img/filter-icon.svg');
+                        @include bgCover;
+                        display: block;
+                        width: 1.3125rem;
+                        height: 1.125rem;
+                        z-index: 1;
+                        @media screen and (max-width: 575.98px) {
+                            top: 1.25rem;
+                        }
+                    }
+                    select{
+                        width: 11rem;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 1rem;
+                        padding-right:  1rem;
+                        border-radius: 0.25rem;
+                        background-color: $white !important;
+                        color: #F1D5B4;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        border: 1px solid #F1D5B4;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        text-indent: 1px;
+                        text-overflow: '';
+                        outline: none;
+                        &::-ms-expand {
+                            display: none;
+                        }
+                        &:hover, &:focus, &:active{
+                            background-color: $white !important;
+                            border: 1px solid #F1D5B4;
+                            border-color: #F1D5B4 !important;
+                            color: #F1D5B4 !important;
+                            outline: none !important;
+                        }
+                        @media (max-width: 1599.98px){
+                            padding-left: 2rem;
+                        }
+                    }
+                }
+            }
+            &__cards{
+                padding: 2rem 0;
+                @include flexBetween;
+                @media (max-width: 991.98px) {
+                    flex-wrap: wrap;
+                }
+                a{
+                    color: $black;
+                }
+                &__single{
+                    width: 30%;
+                    margin-top: 3rem;
+                    border-radius: 1.5rem;
+                    box-shadow: 0 0 0 rgba(255, 255, 255, 0.24), 0 10px 40px -1px rgba(202, 202, 202, 0.30);
+                    @media (max-width: 991.98px) {
+                        width: 100%;
+                        flex-wrap: wrap;
+                    }
+                    @media (max-width: 575.98px) {
+                        width: 100%;
+                    }
+                    &__top{
+                        max-height: 19rem;
+                        overflow: hidden;
+                        @media (max-width: 991.98px) {
+                            max-height: 25rem;
+                        }
+                        img{
+                            width: 100%;
+                            height: auto;
+                            border-radius: 1.5rem;
+                        }
+                    }
+                    &__middle{
+                        @include flexBetween;
+                        padding: 1rem 1.5rem;
+                        h2{
+                            font-size: 1.125rem;
+                            line-height: 1.5rem;
+                            font-weight: 500;
+                        }
+                        h6{
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: $chocolate;
+                        }
+                    }
+                    p{
+                        padding: 0 1.5rem;
+                        font-size: 1rem;
+                        line-height: 1.75rem;
+                        padding-bottom: 1.5rem; 
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
